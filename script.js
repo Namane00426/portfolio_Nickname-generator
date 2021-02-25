@@ -1,16 +1,18 @@
+// set empty textbox and item lists
 let generatedText = [];
-const generateItemA = [red, blue, yerrow, pink, darkblue, orange, white, black, brown, gray];
-const generateItemB = [happy, angry, dizzy, funky, lazy, calmly, fluffy, funny, grumpy, ];
-const generateItemB = [cat, dog, rabbit, giraff, elephant, bear, snake, mouse, fish, shark, bird, squirrel, mole, monkey];
+const generateItemA = ["Red", "Blue", "Yerrow", "Pink", "Darkblue", "Orange", "White", "Black", "Brown", "Gray"];
+const generateItemB = ["happy", "angry", "dizzy", "funky", "lazy", "calm", "fluffy", "funny", "grumpy"];
+const generateItemC = ["cat", "Robot", "rabbit", "giraffe", "elephant", "bear", "dragon", "butterfly", "fish", "shark", "bird", "squirrel", "dwarf", "monkey"];
+const generateArr = [generateItemA, generateItemB, generateItemC];
 
-const randomPicking = arr => {
- arr.filter(elm => arr[Math.floor(Math.random() * arr.length-1)] )
- generatedText.push(arr(0));
- return generatedText;
-}
+// generate new nickname from 3 kinds item lists
+const generator = arr => {
+  let i = 0;
+  for(let i in arr){
+    arr[i] = arr[i][Math.floor(Math.random() * (arr[i].length-1))];
+    generatedText.push(arr[i]);
+  }
+ return `new nickname generated: ${generatedText[0]}-${generatedText[1]}-${generatedText[2]}`;
+};
 
-randomPicking(generateItemA);
-randomPicking(generateItemB);
-randomPicking(generateItemC);
-
-console.log(generatedText);
+console.log(generator(generateArr));
