@@ -1,4 +1,4 @@
-# Nickname_generator - mixed message generator
+# Nickname_generator - mixed message
 **This is a generator for making random nickname. The nickname are made up of three kinds of data to make it random.**
 
 ## Example1:
